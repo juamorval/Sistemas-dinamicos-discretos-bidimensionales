@@ -1,0 +1,66 @@
+<div class="row pl-2">
+    <label data-toggle="tooltip" data-placement="bottom"
+      class="seccion align-top col-4 col-md">Puntos fijos</label>
+    <ul id="fixed_points" class="col-6 col-md-8">
+      {% for pf in puntos_fijos %}
+      <li>
+        <ul>
+          <li>x<sub>{{puntos_fijos.index(pf)}}</sub>: {{pf[0]}}</li>
+          <li>y<sub>{{puntos_fijos.index(pf)}}</sub>: {{pf[1]}}</li>
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="row pl-2">
+    <label data-toggle="tooltip" data-placement="bottom"  class="seccion align-top col-4 col-md">Estabilidad</label>
+    <ul class="col px-1 col-sm-8">
+      {% for p in estabilidad %}
+      <li> El punto ({{p[0][0]}},{{p[0][1]}}) tiene estabilidad: {{p[1]}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="row pl-2">
+    <label data-toggle="tooltip" data-placement="bottom"
+      class="seccion align-top col-4 col-md">Matriz Jacobiana</label>
+  
+    <ul class="col col-sm-8">
+      {% for i in range(matrizJacobiana|length) %}
+        <li style="list-style-type: none;">{{matrizJacobiana[i]}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="row pl-2">
+    <label data-toggle="tooltip" data-placement="bottom"  class="seccion align-top col-4 col-md">Autovalores</label>
+    <ul id="eigen_vals" class="col col-sm-8">
+      {% for i in range(autovalores|length) %}
+      <li>(x<sub>{{i}}</sub>, y<sub>{{i}}</sub>):
+        <ul>
+          <li>&lambda;<sub>{{i}}</sub>: {{autovalores[i][0]}}</li>
+          <li>&lambda;<sub>{{i+1}}</sub>: {{autovalores[i][1]}}</li>
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="row pl-2">
+    <label data-toggle="tooltip" data-placement="bottom"  class="seccion align-top col-4 col-md">Números de Lyapunov </label>
+    <ul class="col col-sm-8">
+      <li>L<sub>1</sub>: {{n_Lyapunov[0]}}</li>
+      <li>L<sub>2</sub>: {{n_Lyapunov[1]}}</li>
+    </ul>
+  </div>
+  <div class="row pl-2">
+    <label data-toggle="tooltip" data-placement="bottom"  class="seccion align-top col-4 col-md">Exponentes de Lyapunov </label>
+    <ul class="col col-sm-7">
+      <li>&lambda;<sub>1</sub>: {{exp_Lyapunov[0]}}</li>
+      <li>&lambda;<sub>2</sub>: {{exp_Lyapunov[1]}}</li>
+    </ul>
+  </div>
+
+  <div class="row pl-2" style="padding-top: 10%;">
+    <label data-toggle="tooltip" data-placement="bottom"  class="align-top col-5">Error producido: </label>
+    <ul class="error col">
+      {{error}}
+    </ul>
+  </div>

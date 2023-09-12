@@ -1,0 +1,51 @@
+
+
+.plots{
+  background-color: aliceblue;
+  height: 100%;
+  width: 100%;
+}
+
+.cabecera {
+  text-align: center;
+  background-color: hsl(32deg 57% 57%);
+  padding-block: 1%;
+  color: hsl(0deg 0% 100%);
+  margin-bottom: 1%;
+}
+
+.seccion {
+  font-weight: bold;
+}
+
+.ecuacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.background {
+  background-color: rgb(248, 245, 169);
+}
+
+.boton {
+  background-color: white;
+  border-radius: 5px;
+  width: 100px;
+  height: 35px;
+  border-color: hsl(0deg 0% 39%);
+  color: black;
+}
+
+.lienzo {
+  background-color: white;
+}
+
+.line {
+  border-top-color: black;
+}
+
+.error {
+  font-weight: bold;
+  color: red;
+}
